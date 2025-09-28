@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/genius-v1-klipper-header.png" alt="Artillery Genius Klipper Konfiguration Header" width="700"/>
+  <img src="assets/img/genius-v1-klipper-header.png" alt="Artillery Genius Klipper Konfiguration Header" width="700"/>
 </p>
 
 <h1 align="center">🚀 Artillery Genius V1 - Klipper Configuration</h1>
