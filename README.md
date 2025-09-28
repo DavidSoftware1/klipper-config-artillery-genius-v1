@@ -53,21 +53,27 @@ sudo apt-get install git -y
 git clone https://github.com/th33xitus/kiauh.git
 ./kiauh/kiauh.sh
 
-Artillery-Genius-V1-Klipper/
-├── 📄 README.md # Diese Datei
-├── 📁 klipper/
-│ ├── 📄 printer.cfg # Hauptkonfiguration
-│ ├── 📁 config/
-│ │ ├── 📄 macros.cfg # Alle Makros
-│ │ ├── 📄 end.cfg # Druckende-Routinen
-│ │ └── 📄 klipperscreen.cfg # Display-Voreinstellungen
-├── 📁 Prusa/
-│ └── 📄 config.ini # PrusaSlicer Profile
-├── 📁 Marlin-bugfix-2.1.x/ # Fallback Firmware
-│ └── 📄 _Bootscreen.h # Custom Bootscreen
-└── 📁 assets/
-└── 📄 genius-v1-klipper-header.png # Header Bild
-text
+
+
+| **`Artillery-Genius-V1-Klipper/`** | | **Das Hauptverzeichnis des Projekts.** |
+| ├── 📄 **`README.md`** | | **Diese Datei.** Beinhaltet die Installationsanleitung und Projektdetails. |
+| ├── 📁 **`klipper/`** | | **Die Klipper-Core-Dateien.** |
+| │ ├── 📄 `klipper.elf.hex` | MCU Firmware | Die fertig kompilierte Klipper-Firmware für das **MKS Gen L (ATmega2560) Mainboard** des Druckers. |
+| │ └── 📁 `config/` | Klipper-Konfigurationen | Alle `.cfg`-Dateien zur Definition des Druckers. |
+| │ ├── 📄 `printer.cfg` | **Hauptkonfiguration** | Definiert alle Pins, Kinematik und die kalibrierten Basiswerte. |
+| │ ├── 📄 `macros.cfg` | Makros | Alle Makros wie `PRINT_START`, `END_PRINT` und sonstige Komfort-Funktionen. |
+| │ ├── 📄 `end.cfg` | Druckende-Routinen | Routinen für den Abschluss eines Drucks. |
+| │ └── 📄 `klipperscreen.cfg` | Display-Einstellungen | Voreinstellungen für das KlipperScreen-Interface. |
+| ├── 📁 **`Prusa/`** | | **Slicer-Profile und Modelle.** |
+| │ ├── 📄 `config.ini` | PrusaSlicer Profil | Das exportierte Profil, abgestimmt auf die Klipper-Geschwindigkeiten. |
+| │ └── 📁 `3d/` | Modelle | Enthält Kalibrierungs-Modelle (`.stl`) und Projektdateien (`.3mf`). |
+| ├── 📁 **`Marlin-bugfix-2.1.x/`** | | **Fallback-Firmware & Referenz.** |
+| │ ├── 📄 `_Bootscreen.h` | Custom Bootscreen | Die Datei für den benutzerdefinierten Bootscreen-Startbildschirm. |
+| │ └── 📄 `config.ini` | Marlin Basis-Config | Die Konfigurations-Dateien der ursprünglich verwendeten Marlin-Version. |
+| └── 📁 **`assets/`** | | **Ressourcen und Dokumentation.** |
+| └── 📄 `genius-v1-klipper-header.png` | Header-Bild | Das Bild, das oben in dieser README angezeigt wird. |
+| └── 📄 `klipper-installation-doku.pdf` | Dokumentation | Die detaillierte Schritt-für-Schritt-Installationsanleitung im PDF-Format. |
+
 
 
 ## ⚡ Schnellstart
