@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title>Page 14</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft00{font-size:18px;font-family:BAAAAA+DejaVuSerif;color:#000000;}
+	.ft01{font-size:18px;line-height:21px;font-family:BAAAAA+DejaVuSerif;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page14-div" style="position:relative;width:892px;height:1262px;">
+<img width="892" height="1262" src="klipper doku _convertedToPDF014.png" alt="background image"/>
+<p style="position:absolute;top:85px;left:85px;white-space:nowrap" class="ft00">/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0</p>
+<p style="position:absolute;top:127px;left:85px;white-space:nowrap" class="ft00">make flash&#160;FLASH_DEVICE=/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0</p>
+<p style="position:absolute;top:664px;left:85px;white-space:nowrap" class="ft00">sudo&#160;service&#160;klipper start</p>
+<p style="position:absolute;top:706px;left:85px;white-space:nowrap" class="ft00">sudo&#160;service&#160;klipper stop</p>
+<p style="position:absolute;top:769px;left:85px;white-space:nowrap" class="ft01">avrdude -p&#160;atmega2560&#160;-c&#160;wiring&#160;-P&#160;/dev/serial/by-id/usb-1a86_USB_Serial-<br/>if00-port0&#160;-b115200&#160;-D&#160;-U flash:w:out/klipper.elf.hex:i&#160;nop&#160;<br/>sudo&#160;avrdude -p&#160;atmega2560&#160;-c&#160;arduino&#160;-P&#160;<br/>/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0&#160;-b&#160;115200&#160;-U&#160;<br/>flash:w:out/klipper.elf.hex:i</p>
+<p style="position:absolute;top:916px;left:85px;white-space:nowrap" class="ft01">&#160;sudo&#160;service klipper stop<br/>klipper@klipper:~/klipper&#160;$&#160;make flash&#160;<br/>FLASH_DEVICE=/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0<br/>&#160; Flashing&#160;out/klipper.elf.hex&#160;to&#160;/dev/serial/by-id/usb-1a86_USB_Serial-if00-<br/>port0&#160;via&#160;avrdude</p>
+<p style="position:absolute;top:1042px;left:85px;white-space:nowrap" class="ft01">avrdude:&#160;AVR&#160;device initialized&#160;and&#160;ready&#160;to&#160;accept&#160;instructions<br/>avrdude:&#160;device&#160;signature = 0x1e9801&#160;(probably&#160;m2560)<br/>avrdude:&#160;reading&#160;input&#160;file out/klipper.elf.hex&#160;for flash<br/>&#160; &#160;&#160;&#160; &#160;&#160; with&#160;40114&#160;bytes&#160;in&#160;1&#160;section&#160;within&#160;[0,&#160;0x9cb1]<br/>&#160; &#160;&#160;&#160; &#160;&#160; using&#160;157&#160;pages&#160;and&#160;78&#160;pad&#160;bytes<br/>avrdude:&#160;writing&#160;40114&#160;bytes&#160;flash&#160;...</p>
+</div>
+</body>
+</html>

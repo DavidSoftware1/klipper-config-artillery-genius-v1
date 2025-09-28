@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Klipper-Abenteuer: So wird dein Artillery Genius V1 zum Turbo-Drucker!</title>
+    <style>
+        /* --- ALLGEMEINES CSS FÜR EINEN LOCKEREN BLOG-LOOK --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .intro-block, .content-block, .cta-block {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .image-hint {
+            display: block;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            color: #388e3c;
+            font-style: italic;
+        }
+        ul.software-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul.software-list li {
+            background: #ecf0f1;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        /* --- SPEZIELLES CSS FÜR GIT REPO --- */
+        .git-repo-box {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .git-repo-box a {
+            display: inline-block;
+            background-color: #f39c12;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .git-repo-box a:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="intro-block">
+        <h1>🚀 Mein Klipper-Abenteuer: Vom Kampf mit avrdude zum ersten Benchy!</h1>
+        <p>
+            Hey! Schön, dass du dabei bist. Wenn du auch so ein Fan von knackiger Geschwindigkeit und absoluter Präzision beim 3D-Druck bist, kennst du das Gefühl: Man will mehr aus seinem Setup herausholen. Genau das war mein Ziel: Mein <strong>Artillery Genius V1</strong> mit MKS Gen L Board sollte endlich Klipper-Power bekommen! Was als "schnelles Wochenendprojekt" geplant war, wurde eine Reise mit unerwarteten Hürden - aber am Ende steht der Erfolg! Lass mich dir zeigen, wie's geht.
+        </p>
+        <span class="image-hint">[BILD: Mein Artillery Genius V1 mit Raspberry Pi Setup]</span>
+    </header>
+
+    <section class="content-block">
+        <h2>🛠️ Die Mission & das Werkzeug</h2>
+        <p>
+            Ziel: Die stockige Marlin-Firmware durch Klipper ersetzen, um das volle Potenzial der Hardware auszuschöpfen. Das Gehirn der Operation ist ein Raspberry Pi mit den drei Hauptkomponenten: <strong>Klipper</strong> (die Firmware), <strong>Moonraker</strong> (die API/der Dolmetscher) und <strong>Mainsail</strong> (die Web-Oberfläche).
+        </p>
+
+        <h3>Meine Werkzeugkiste</h3>
+        <ul class="software-list">
+            <li><strong>Betriebssystem:</strong> Raspberry Pi OS Lite (32-bit)</li>
+            <li><strong>Installationstool:</strong> <strong>KIAUH (Klipper Installation And Update Helper)</strong> - Der absolute Lebensretter!</li>
+            <li><strong>Flash-Tools (Plan B):</strong> 
+                <ul>
+                    <li><strong>PrusaSlicer Firmware Flasher</strong> - Der unerwartete Held!</li>
+                    <li>PlatformIO & VS Code (für die mutigen Kommandozeilen-Fans)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="git-repo-box">
+            <h3>Meine fertige Klipper Configuration</h3>
+            <p>Die komplette <code>printer.cfg</code> für den Artillery Genius V1 mit allen Makros und Einstellungen findest du in meinem GitHub Repo. Spare dir die Fehlersuche!</p>
+            <a href="https://github.com/deinusername/artillery-genius-klipper" target="_blank">Zum GitHub Repository</a>
+        </div>
+    </section>
+
+    <section class="content-block">
+        <h2>💻 Phase 1: KIAUH macht's einfach</h2>
+        <p>
+            Nach System-Update und Git-Installation ging's mit KIAUH los. Im Hauptmenü wählte ich nacheinander:
+        </p>
+        <ol>
+            <li><strong>Klipper</strong> - die Kern-Firmware</li>
+            <li><strong>Moonraker</strong> - die Kommunikations-API</li>
+            <li><strong>Mainsail</strong> - das Webinterface</li>
+        </ol>
+        <span class="image-hint">[BILD: Screenshot des KIAUH-Menüs mit den ausgewählten Optionen]</span>
+
+        <h3>Wichtiger Hinweis: Die TTY-Gruppe</h3>
+        <p>
+            Direkt nach der Klipper-Installation kam eine <strong>WARNING</strong> bezüglich der Gruppe <code>tty</code>. Unbedingt mit <strong>Y</strong> bestätigen! Das ist kritisch, damit Klipper später auf die Hardware-Schnittstelle zugreifen kann.
+        </p>
+    </section>
+
+    <section class="content-block">
+        <h2>🤯 Phase 2: Der Flash-Krimi</h2>
+        <p>
+            Das war die größte Hürde! Die Klipper-Firmware musste auf das ATmega2560 Mainboard.
+        </p>
+        
+        <h3>Plan A (gescheitert):</h3>
+        <p><code>make flash FLASH_DEVICE=/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0</code></p>
+        <p>Resultat: <code>avrdude error: timeout</code> und <code>verification mismatch</code> - immer wieder!</p>
+        
+        <h3>Plan B (erfolgreich):</h3>
+        <p>Der <strong>PrusaSlicer Firmware Flasher</strong> rettete den Tag! Einfach COM-Port auswählen, HEX-Datei laden und auf "Flash" klicken - funktionierte sofort.</p>
+        <span class="image-hint">[BILD: Screenshot des erfolgreichen Flashens im PrusaSlicer]</span>
+
+        <h2>⚙️ Phase 3: Die Config-Schlacht</h2>
+        <p>
+            Nach erfolgreichem Flashen war Mainsail erreichbar, aber Klipper meldete Fehler. Die <code>printer.cfg</code> war der Schlüssel:
+        </p>
+        <ul>
+            <li><strong>Korrekter serial-Pfad:</strong> <code>/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0</code></li>
+            <li><strong>Pin-Aliase essentiell:</strong> Der <code>[board_pins arduino-mega]</code>-Block musste perfekt sein</li>
+            <li><strong>Erster Erfolg:</strong> Nach Korrektur von <code>max_velocity</code> war Klipper ready!</li>
+        </ul>
+    </section>
+
+    <footer class="cta-block">
+        <h2>🎉 Der Triumph: Erster Benchy gedruckt!</h2>
+        <p>
+            Nach Z-Offset-Einstellung (<code>G28</code> + Papiertest) konnte der erste Druck starten. Das Ergebnis: Ein perfekter Benchy, gedruckt mit Klipper-Power! Die Geschwindigkeit und Qualität waren sofort spürbar besser.
+        </p>
+        <span class="image-hint">[BILD: Foto des ersten mit Klipper gedruckten Benchys]</span>
+
+        <h3>Was sind deine nächsten Schritte?</h3>
+        <p>
+            Mein nächstes Ziel ist <strong>Crowsnest</strong> für den Webcam-Stream und das Feintuning der Pressure Advance-Werte. 
+            <br><br>
+            <strong>Hast du Fragen zu meiner Config? Bist du auch am Klipper-Umstieg? Lass uns austauschen!</strong>
+        </p>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <p style="font-size: 1.2em; font-weight: bold;">
+                Schreib mir deine Erfahrungen!
+            </p>
+            <p>
+                Gemeinsam troubleshooten wir dein Klipper-Setup.
+            </p>
+            <a href="https://github.com/deinusername" style="text-decoration: none; color: #3498db; font-weight: bold;">David auf GitHub kontaktieren</a>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
