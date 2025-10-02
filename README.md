@@ -135,7 +135,7 @@ aliases:
 Problem: Neopixel flackerte unkontrolliert
 
 Lösung: Einfache Output-Pins verwenden:
-ini
+
 
 [output_pin green_led]
 pin: ar5
@@ -149,7 +149,7 @@ value: 1
 🏠 Smart Home
 gcode
 
-SMARTHOME          ; Homing nur wenn nötig
+SMARTHOME          ; Homing 
 MOVE_CENTER        ; Zur Bettmitte fahren
 
 ⏸️ Drucksteuerung
@@ -256,12 +256,5 @@ Wichtiger Hinweis: Diese Konfiguration wurde speziell für den Artillery Genius 
 text
 
 
-Diese README.md integriert alle deine Dateien:
 
-1. **Prusa Slicer Profile** - Vollständige Konfiguration für optimale Drucke
-2. **Marlin Fallback** - Mit Custom Bootscreen als Backup-Option  
-3. **Klipper Makros** - Deutsche Befehle mit Smart-Funktionen
-4. **Gelöste Probleme** - Lüfter-Pins, LED-Steuerung, etc.
-5. **Strukturierte Anleitung** - Von Installation bis Troubleshooting
 
-Das Repository ist jetzt professionell dokumentiert und ready für GitHub! 🚀
